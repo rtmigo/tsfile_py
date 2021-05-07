@@ -23,18 +23,20 @@ def iter_parents(path: Path):
 
 
 def caller_module() -> Path:
+    """Returns the name of the file containing the module from which this
+    function was called. This ignores all modules located directly inside the
+    parent directory of the current file (tsfile/*)."""
     this_file_parent = Path(__file__).parent
 
-    stack = inspect.stack()
-    for f in stack:
-        if f.filename.startswith('<'):
+    for frame in inspect.stack():
+        if frame.filename.startswith('<'):
             continue
-        path = Path(f.filename)
+        path = Path(frame.filename)
         if path.parent == this_file_parent:
             continue
         return path
 
-    raise RuntimeError
+    raise RuntimeError("Failed to determine the caller module.")
 
 
 class TimestampFile:

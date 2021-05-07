@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="tsfile",
-    version="0.0.2",
+    version="0.0.3",
     author="Artёm IG",
     author_email="ortemeo@gmail.com",
     url='https://github.com/rtmigo/tsfile_py',
