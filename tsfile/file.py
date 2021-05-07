@@ -4,7 +4,7 @@
 
 from pathlib import Path
 from typing import Optional
-
+import inspect
 from dateutil import parser
 
 from tsfile.version import version_from_milliday
@@ -21,6 +21,32 @@ def iter_parents(path: Path):
         path = n
         yield path
 
+
+def caller_module() -> Path:
+
+    this_file_parent = Path(__file__).parent
+
+    stack = inspect.stack()
+    for f in stack:
+        if f.filename.startswith('<'):
+            continue
+        path = Path(f.filename)
+        if path.parent == this_file_parent:
+            continue
+        return path
+
+    raise RuntimeError
+
+        #if len(path.parts)>=2 and path.parts[-2]=='tsfile'
+        #print(f.filename)
+        #print()
+    #print(stack)
+    #frame = frame.f_back.f_back
+    #code = frame.f_code
+    #return code.co_filename
+
+#print(caller_module())
+#exit()
 
 class TimestampFile:
 

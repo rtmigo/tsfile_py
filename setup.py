@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="tsfile",
-    version="0.0.0",
+    version="0.0.1",
 
     author="Artёm IG",
     author_email="ortemeo@gmail.com",
