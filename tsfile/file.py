@@ -62,7 +62,7 @@ class TimestampFile:
         return version_from_milliday(self.time)
 
     def _find_file(self) -> Optional[Path]:
-        for parent in iter_parents(Path(__file__)):
+        for parent in iter_parents(caller_module()):
             ts_file = parent / "timestamp.txt"
             if ts_file.exists():
                 return ts_file
