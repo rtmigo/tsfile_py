@@ -1,6 +1,14 @@
 Python package for solving a specific task: reading the date stored in 
 a `timestamp.txt`. 
 
+# Install
+
+``` bash
+
+$ pip install git+https://github.com/rtmigo/tsfile_py#egg=tsfile
+
+```
+
 ## timestamp.txt
 
 Sample content `my_project/timestamp.txt`:
