@@ -37,5 +37,5 @@ build_timestamp = TimestampFile()
 
 print(build_timestamp.text)       # '2021-05-07 22:01:44 +03'
 print(build_timestamp.time)       # datetime.datetime
-print(build_timestamp.version)    # '21.253.835' (generated from time)
+print(build_timestamp.version)    # '21.253.835' (generated from timestamp)
 ```

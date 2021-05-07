@@ -1,6 +1,9 @@
+# SPDX-FileCopyrightText: (c) 2021 Artёm IG <github.com/rtmigo>
+# SPDX-License-Identifier: MIT
+
+
 from pathlib import Path
 from typing import Optional
-import datetime as dt
 
 from dateutil import parser
 
