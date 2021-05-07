@@ -23,7 +23,6 @@ def iter_parents(path: Path):
 
 
 def caller_module() -> Path:
-
     this_file_parent = Path(__file__).parent
 
     stack = inspect.stack()
@@ -37,16 +36,6 @@ def caller_module() -> Path:
 
     raise RuntimeError
 
-        #if len(path.parts)>=2 and path.parts[-2]=='tsfile'
-        #print(f.filename)
-        #print()
-    #print(stack)
-    #frame = frame.f_back.f_back
-    #code = frame.f_code
-    #return code.co_filename
-
-#print(caller_module())
-#exit()
 
 class TimestampFile:
 
