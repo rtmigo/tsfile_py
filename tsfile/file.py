@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: (c) 2021 Artёm IG <github.com/rtmigo>
 # SPDX-License-Identifier: MIT
-
-
+import datetime
 from pathlib import Path
 from typing import Optional
 import inspect
@@ -50,7 +49,11 @@ class TimestampFile:
 
     @property
     def version(self):
-        return version_from_milliday(self.time)
+        return version_from_milliday(self.time_utc)
+
+    @property
+    def time_utc(self):
+        return self.time.astimezone(tz=datetime.timezone.utc)
 
     def _find_file(self) -> Optional[Path]:
         for parent in iter_parents(caller_module()):
