@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: (c) 2021 Artёm IG <github.com/rtmigo>
+# SPDX-License-Identifier: MIT
+
+
 import unittest
 import datetime as dt
-from tsfile.file import TimestampFile
+from tsfile import TimestampFile
 from dateutil.tz import tzoffset
 
 
