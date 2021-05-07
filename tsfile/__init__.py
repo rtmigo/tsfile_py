@@ -1,1 +1,1 @@
-from file import TimestampFile
+from .file import TimestampFile
