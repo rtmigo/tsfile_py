@@ -10,6 +10,7 @@ setup(
     author_email="ortemeo@gmail.com",
     url='https://github.com/rtmigo/tsfile_py',
 
+    install_requires=['python-dateutil'],
     packages=find_packages(),
 
     description="Finds and parsed the timestamp.txt file",
